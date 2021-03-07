@@ -6,11 +6,11 @@ use Livewire\Component;
 
 class Welcome extends Component
 {
-    public $title =" Livewire Demo";
+    public $title ="Livewire Data Binding Demo";
 
     public function changeTitle()
     {
-        $this->title = "New LiveWire Demo";
+        //   $this->title ="New Livewire Demo";
     }
 
     public function render()

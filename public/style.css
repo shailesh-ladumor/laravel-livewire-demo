@@ -16,12 +16,13 @@ main {
 .ticket {
     border-bottom: 1px solid rgb(200, 206, 211);
     padding: 15px;
+    cursor: pointer;
 }
 
-.ticket.active {
-    background-color: #20a8d8;
-    color: white;
-}
+/*.ticket.active {*/
+/*    background-color: #20a8d8;*/
+/*    color: white;*/
+/*}*/
 
 .ticket:last-child {
     border-bottom: none;

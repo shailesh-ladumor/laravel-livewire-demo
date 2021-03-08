@@ -9,7 +9,7 @@ class TicketsList extends Component
 {
     public $search;
     public $tickets = [];
-    public $selectedId;
+    public $selectedId = 1;
 
     public function render()
     {

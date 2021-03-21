@@ -3,18 +3,26 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use App\Models\Ticket;
 
 class TicketsList extends Component
 {
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
     public $search;
-    public $tickets = [];
+    // public $tickets = [];
     public $selectedId = 1;
 
+    public function updatingSearch(){
+        $this->resetPage();
+    }
+    
     public function render()
     {
-        $this->refreshTickets();
-        return view('livewire.tickets-list');
+       $tickets = $this->refreshTickets();
+        return view('livewire.tickets-list')->with('tickets', $tickets);
     }
 
     public function refreshTickets(){
@@ -24,7 +32,7 @@ class TicketsList extends Component
             $query =  $query->where('subject', 'like', '%'.$this->search.'%');
         }
 
-       $this->tickets = $query->get();
+       return $query->paginate(10);
     }
 
     public function onTicketSelected($ticketId){

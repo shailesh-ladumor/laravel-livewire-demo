@@ -1,4 +1,4 @@
-<div class="col-lg-12">
+<div class="col-lg-6">
     <div class="input-group w-25">
         <input wire:model="search" type="text" class="form-control" id="txtSearch" placeholder="Search"/>
      </div>
@@ -10,4 +10,9 @@
                  </div>
              @endforeach
      </div>
+     <div class="mt-4">
+         {{ $tickets->links() }}
+     </div>
+ </div>
+ <div class="col-lg-6">
  </div>
